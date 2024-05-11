@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上传照片</title>
+    <link rel="stylesheet" href="css/pic.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/bottom_button.css">
+
+    <style>
+        /* 应用背景图像样式 */
+        body {
+            background-image: url("img/tiles-shapes-2617112_1280.jpg");
+            /*background: url("img/tiles-shapes-2617112_1280.jpg") no-repeat center center fixed;*/
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            /* background-position-x: center;
+            background-size: auto 100%;
+            background-position-y:100%; */
+            display: flex;
+            overflow-x: hidden;
+            overflow-y: auto;
+            /* justify-content: center;
+            align-items: center;*/
+            flex-direction: column;
+            height: 100vh;
+            /* 设置容器高度为视口的100% */
+            margin: 0;
+            /* 移除默认的外边距 */
+            padding: 0;
+            /* 移除默认的内边距 */
+            /* 
+            transition: opacity 1s ease;
+            transition:background-color 1s ease;
+            transition:background-image 1s ease; */
+
+            transition: all 1s ease;
+
+            /* transition: opacity 1s ease;
+            transition: background-img 1s ease */
+        }
+
+        #filechoose {
+            position: absolute;
+            /* added */
+            top: 50%;
+            /* 让元素顶部位于屏幕垂直中间 */
+            left: 50%;
+            /* 让元素左侧位于屏幕水平中间 */
+            transform: translate(-50%, -50%);
+            /* 使用 transform 将元素居中 */
+            display: flex;
+            flex-direction: column;
+            /* 垂直方向布局 */
+            align-items: center;
+            /* 水平居中 */
+        }
+
+        #customimg {
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            /*margin: 200px auto auto 600px;*/
+            width: 200px;
+            ;
+            height: 200px;
+            border: 2px solid white;
+            border-radius: 30px 30px 30px 30px;
+        }
+
+        #fileName {
+            color: green;
+            font-size: 30pt;
+            font-weight: 500;
+            /*margin: auto auto auto 700px;*/
+        }
+    </style>
+</head>
+
+<body id="mybody" class="fade-in">
+    <div class="box">
+        <ul class="list">
+            <li><img src="img/1.1.jpg" alt="" /></li>
+            <li><img src="img/1.2.jpg" alt="" /></li>
+            <li><img src="img/1.3.webp" alt="" /></li>
+            <li><img src="img/1.4.jpg" alt="" /></li>
+            <li><img src="img/1.5.webp" alt="" /></li>
+            <li><img src="img/1.6.webp" alt="" /></li>
+            <li><img src="img/1.7.webp" alt="" /></li>
+            <li><img src="img/1.8.webp" alt="" /></li>
+            <li><img src="img/mushroom-8191823_1280.webp" alt="" /></li>
+        </ul>
+    </div>
+    <div class="box">
+        <ul class="list">
+            <li><img src="img/2.1.webp" alt="" /></li>
+            <li><img src="img/2.2.jpg" alt="" /></li>
+            <li><img src="img/2.3.jpg" alt="" /></li>
+            <li><img src="img/2.4.jpg" alt="" /></li>
+            <li><img src="img/2.5.jpg" alt="" /></li>
+            <li><img src="img/2.6.jpg" alt="" /></li>
+            <li><img src="img/2.7.jpg" alt="" /></li>
+            <li><img src="img/2.8.jpg" alt="" /></li>
+            <li><img src="img/01e4315542ab990000019ae99f4ef0.jpg@1280w_1l_2o_100sh.jpg" alt="" /></li>
+        </ul>
+    </div>
+    <div class="box">
+        <ul class="list">
+            <li><img src="img/3.1.webp" alt="" /></li>
+            <li><img src="img/3.2.jpg" alt="" /></li>
+            <li><img src="img/3.3.jpg" alt="" /></li>
+            <li><img src="img/3.4.jpg" alt="" /></li>
+            <li><img src="img/3.5.jpg" alt="" /></li>
+            <li><img src="img/3.6.jpg" alt="" /></li>
+            <li><img src="img/3.7.jpg" alt="" /></li>
+            <li><img src="img/3.8.jpg" alt="" /></li>
+            <li><img src="img/mountain-8451604_1280.webp" alt="" /></li>
+        </ul>
+    </div>
+    <script src="js/move.js"></script>
+
+
+    <div class="wrapper">
+        <a href="#" class="button" onclick="window.location.href = 'test.html'">CLICK ME</a>
+    </div>
+
+    <!--  <div id="filechoose" >
+        <!-- 自定义的文件选择器按钮 
+        <img id="customimg" src="img/filechoose.webp" alt="filechoose" ></img>
+        <p id="fileNames"></p>
+
+        <!-- 隐藏原生的文件输入元素 
+        <input type="file" id="myFile" accept="image/*" style="display: none;" multiple>
+        </div> -->
+    <!-- <script src="js/file.js"></script> -->
+    <script src="js/test.js"></script>
+    <script src="js/opera.js"></script>
+    <script src="js/bottom_button_click.js"></script>
+
+    <button class="bottom_button" onclick="bottom_button_click()">上传</button>
+</body>
+
+</html>

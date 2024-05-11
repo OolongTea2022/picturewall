@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>圆形按钮展示框</title>
+  <link rel="stylesheet" type="text/css" href="../cssfile/test.css">
+</head>
+
+<body>
+  <div id="add_window">
+    <input type="file" id="choose_img" accept="image/*" multiple style="display: none">
+    <div class="btn add" id="add_img_btn">
+      <div id="add_part" onclick="triggerFileInput()">
+        <span>+</span>
+      </div>
+      <div id="img_part" onclick="toggleDisplay()">
+
+      </div>
+    </div>
+
+    <div class="listshow-container flip_container" id="display_box">
+      <ul id="imglists" class="flip_container">
+
+      </ul>
+      <button class="mini_btn prev" onclick="preList()">&#10094; Prev</button>
+      <button class="mini_btn next" onclick="nextList()">Next &#10095;</button>
+      <button class="mini_btn dele" onclick="deleteList()">&times;</button>
+    </div>
+  </div>
+
+  <script src="../jsfile/test.js"></script>
+
+</body>
+
+</html>
