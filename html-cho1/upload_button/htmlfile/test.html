@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+
+<script>
+    let storedImageUrls = JSON.parse(localStorage.getItem('imgs_URL'));
+    let storedImageMsgs = JSON.parse(localStorage.getItem('imgs_msgs'));
+// 在需要的时候使用保存的图片URL数组
+let div = document.getElementById("box");
+storedImageUrls.forEach(function(url) {
+    // 创建一个新的图片元素
+    var img = document.createElement('img');
+    img.src = url;
+
+    // 将图片添加到DOM中
+    div.appendChild(img);
+});
+
+storedImageMsgs.forEach(function(text){
+    let span = document.createElement('span');
+    span.textContent = text;
+    div.appendChild(span);
+})
+</script>
+
+</html>

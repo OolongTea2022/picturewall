@@ -8,6 +8,8 @@ let originalPhotoSrc;
 
 
 let select_img;//被mouseover选择的图片
+let select_content;//被mouseover选择的图片所对应的文字描述
+
 
 const timeline = document.querySelector(".timeline");
 const items = document.querySelectorAll(".timeline-item");
@@ -83,6 +85,8 @@ for (item of items) {
       // 获取当前div中的所有图片
       const images = e.target.parentNode.querySelectorAll('img');
       select_img = e.target;//TODO真的能直接赋值吗
+
+
       // 遍历所有图片
       for (let img of images) {
         // 如果当前图片不是鼠标悬停的图片，将其透明度设置为0.5

@@ -5,16 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>圆形按钮展示框</title>
-  <link rel="stylesheet" type="text/css" href="../cssfile/test.css">
+  <link rel="stylesheet" type="text/css" href="../cssfile/addHtml.css">
 </head>
 
-<body>
+<body class="fade-out">
   <div id="add_window">
     <input type="file" id="choose_img" accept="image/*" multiple style="display: none">
     <div class="btn add" id="add_img_btn">
       <div id="add_part" onclick="triggerFileInput()">
         <span>+</span>
-      </div>
+      </div>    
       <div id="img_part" onclick="toggleDisplay()">
 
       </div>
@@ -28,9 +28,17 @@
       <button class="mini_btn next" onclick="nextList()">Next &#10095;</button>
       <button class="mini_btn dele" onclick="deleteList()">&times;</button>
     </div>
+
+    <button id = "finish_btn" onclick="finished()">&#10004;</button>
   </div>
 
-  <script src="../jsfile/test.js"></script>
+  <script src="../jsfile/addHtml.js"></script>
+  <script>
+    const body = document.querySelector('body');
+    if (body.classList.contains('fade-out')){
+        body.classList.replace('fade-out', 'fade-in');
+    }
+  </script>
 
 </body>
 

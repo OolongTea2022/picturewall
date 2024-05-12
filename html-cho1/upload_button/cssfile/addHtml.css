@@ -1,7 +1,26 @@
-   
+   body {
+    
+    background-size: cover;
+    transition: all 5s ease;
+
+    /* animation: window_animation 3s ease;
+    animation-fill-mode: forwards; */
+   }
+
+   .fade-out {
+    opacity: 0;
+    background-image: none;
+   }
+
+   .fade-in {
+    opacity: 1;
+    background-image: url("../imagesfile/tiles-shapes-2617112_1280.jpg");
+   }
+
+
    #add_window {
-        width: 1400px;
-        height: 1000px;
+        width: 1360px;
+        height: 690px;
         position: relative;
         top: 0;
         left: 0;
@@ -23,11 +42,16 @@
        position: absolute;
        top: calc(50% - 50px);
        left: calc(50% - 50px);
-       z-index: 1;
+       z-index: 4;
        font-size: 50px;
        overflow: hidden;
-       transition: all 0.5s ease;
+       transition: all 1s ease;
    }
+      /* 圆形按钮移动到长方形左上角的样式 */
+      .btn.add.move {
+        top: calc(50% - 200px - 50px);
+        left: calc(50% - 300px - 50px);
+    }
 
    #add_part {
        flex: 1;
@@ -65,8 +89,8 @@
        left: 50%;
        transform: translate(-50%, -50%);
        overflow: hidden;
-       z-index: 0;
-       transition: all 0.5s ease;
+       z-index: 2;
+       transition: all 1s ease;
        border-radius: 15px;
        box-shadow: 0 .1875rem .4375rem 0 rgba(0, 0, 0, .13), 0 .0625rem .125rem 0 rgba(0, 0, 0, .11);
    }
@@ -92,9 +116,7 @@
        margin: 0;
        list-style: none;
        float: left;
-       z-index: 1;
-
-
+       /* z-index: 1; */
    }
 
    .flip_container {
@@ -124,11 +146,11 @@
 
    .back {
        transform: rotateY(-180deg);
-       z-index: 1;
+       z-index: 2;
    }
 
    .front {
-       z-index: 2;
+       z-index: 3;
    }
 
    .list_img {
@@ -168,12 +190,6 @@
        /* 设置底部边框 */
    }
 
-   /* 圆形按钮移动到长方形左上角的样式 */
-   .btn.add.move {
-       top: calc(50% - 200px - 50px);
-       left: calc(50% - 300px - 50px);
-   }
-
    .mini_btn {
        position: absolute;
        background-color: rgba(0, 0, 0, 0.5);
@@ -202,15 +218,74 @@
        right: 0;
    }
 
-   .animate {
-       animation-play-state: running;
+   #finish_btn {
+    height: 50px;
+    width: 0;
+    color: white;
+    background-color: #31c812;
+    text-align: right;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    overflow: hidden;
+    visibility: hidden;
    }
 
-   /* HTML: <div class="loader"></div> */
-   .loader {
-       width: 50px;
-       aspect-ratio: 1;
-       background: #006cff;
-       border-radius: 50%;
-       animation: l1 3s infinite linear;
+   #finish_btn.show {
+    width: 100px;
+    visibility: visible;
    }
+
+   #finish_btn.finishBtnShow_animation {
+    animation: finishBtnShow_animation 0.5s ease;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+   }
+
+   #finish_btn.finishBtnHidden_animation {
+    animation: finishBtnHidden_animation 1s ease;
+    animation-fill-mode: forwards;
+   }
+
+   #finish_btn.finishBtnClick_animation {
+    animation: finishBtnClick_animation 1s ease;
+
+    animation-fill-mode: forwards;
+   }
+   #finish_btn.finishBtnClick_animation_ll {
+    animation: finishBtnClick_animation_ll 1s ease;
+
+    animation-fill-mode: forwards;
+   }
+
+
+   @keyframes finishBtnShow_animation
+{
+    0% {width: 0; visibility: hidden;}
+    100% {width: 350px; visibility: visible;}
+}
+@keyframes finishBtnHidden_animation
+{
+    0% {width: 350px; visibility: visible;}
+    100% {width: 0; visibility: hidden;}
+}
+
+@keyframes finishBtnClick_animation {
+    0% {width: 350px; visibility: visible;}
+    50% {width: 330px; visibility: visible;}
+    100% {width: 350px; visibility: visible;}
+}
+
+@keyframes finishBtnClick_animation_ll {
+    0% {width: 350px; visibility: visible;}
+    50% {width: 330px; visibility: visible;}
+    100% {width: 350px; visibility: visible;}
+}
+
+@keyframes window_animation {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}

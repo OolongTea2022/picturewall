@@ -39,8 +39,6 @@ document.getElementById('choose_img').addEventListener('change', function() {
 function uploadImage() {
   const fileInput = document.getElementById('choose_img');
   const files = fileInput.files;
-  console.log(files);
-  
   num_img += files.length;
   const ul = document.getElementById('imglists');
   ul.style.width = num_img * 600 + 'px';
@@ -84,12 +82,12 @@ function uploadImage() {
           li.appendChild(back);
           ul.appendChild(li);
           updateAddButton();
-          updateLists();
-          clearFileInput();
       }
-
       reader.readAsDataURL(file);
   }
+  toggleFinishBtn();
+  updateLists();
+  clearFileInput();
 }
 
 function updateAddButton(){
@@ -169,10 +167,81 @@ function inputClick(event){
   event.stopPropagation();
 }
 
+let display_state = 0;
 function toggleDisplay() {
     var displayBox = document.getElementById("display_box");
     var button = document.querySelector(".btn.add");
-    
+    if(display_state == 0) {
+      display_state = 1;
+    } else {
+      display_state = 0;
+    }
+    toggleFinishBtn();
     displayBox.classList.toggle("show");
     button.classList.toggle("move");
+}
+
+
+let finish_btn_state = 0;
+function toggleFinishBtn() {
+  let finish_btn = document.getElementById('finish_btn');
+  if(num_img > 0) {
+    if(display_state == 1){
+      if(finish_btn_state == 0){
+        if(finish_btn.classList.contains("finishBtnHidden_animation")){
+          finish_btn.classList.remove("finishBtnHidden_animation");
+        }
+        finish_btn.classList.add("finishBtnShow_animation");
+        finish_btn_state = 1;
+        return;
+      } else {
+        return;
+      }
+    }
+  }
+  if(finish_btn_state == 1) {
+    if(finish_btn.classList.contains("finishBtnShow_animation")){
+      finish_btn.classList.remove("finishBtnShow_animation");
+    } else {
+      finish_btn.classList.remove("finishBtnClick_animation");
+    }
+    finish_btn.classList.add("finishBtnHidden_animation");
+    finish_btn_state = 0;
+  }
+}
+
+
+function finished() {
+    let finish_btn = document.getElementById('finish_btn');
+    if(finish_btn.classList.contains("finishBtnShow_animation")){
+      finish_btn.classList.remove("finishBtnShow_animation");
+      finish_btn.classList.add("finishBtnClick_animation");
+    } else if(finish_btn.classList.contains("finishBtnClick_animation")){
+      finish_btn.classList.remove("finishBtnClick_animation");
+      finish_btn.classList.add("finishBtnClick_animation_ll");
+    } else {
+      finish_btn.classList.remove("finishBtnClick_animation_ll");
+      finish_btn.classList.add("finishBtnClick_animation");
+    }
+
+
+    // finish_btn.classList.add("finishBtnHidden_animation");
+    // finish_btn.classList.remove("finishBtnHidden_animation");
+    // finish_btn.classList.add("finishBtnShow_animation");
+
+    let imgs = document.querySelectorAll('.list_img');
+    let text_inputs = document.querySelectorAll('#text-input input');
+
+    let imgs_URL = [];
+    imgs.forEach(function(img) {
+        imgs_URL.push(img.src);
+    });
+
+    let img_msgs = [];
+    text_inputs.forEach(function(input) {
+        img_msgs.push(input.value);
+    })
+
+    localStorage.setItem('imgs_URL', JSON.stringify(imgs_URL));
+    localStorage.setItem('imgs_msgs', JSON.stringify(img_msgs));
 }
