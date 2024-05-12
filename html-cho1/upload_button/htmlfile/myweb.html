@@ -6,10 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>圆形按钮展示框</title>
   <link rel="stylesheet" type="text/css" href="../cssfile/addHtml.css">
+
+
 </head>
 
 <body class="fade-out">
+
+
+
   <div id="add_window">
+    <button class="top_button" onclick="top_button_click()">返回</button>
+
     <input type="file" id="choose_img" accept="image/*" multiple style="display: none">
     <div class="btn add" id="add_img_btn">
       <div id="add_part" onclick="triggerFileInput()">
@@ -37,9 +44,9 @@
     const body = document.querySelector('body');
     if (body.classList.contains('fade-out')){
         body.classList.replace('fade-out', 'fade-in');
+
     }
   </script>
-
 </body>
 
 </html>

@@ -245,3 +245,18 @@ function finished() {
     localStorage.setItem('imgs_URL', JSON.stringify(imgs_URL));
     localStorage.setItem('imgs_msgs', JSON.stringify(img_msgs));
 }
+
+
+
+top_button_click = ()=>{
+  var body = document.querySelector("body");
+
+  if (body.classList.contains('fade-in')){
+      body.classList.replace('fade-in', 'fade-out');
+  }
+  setTimeout(() => {
+      window.location.href = '../../index.html';
+  }, 1000);
+  
+
+}

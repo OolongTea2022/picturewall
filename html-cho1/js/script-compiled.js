@@ -169,14 +169,14 @@ function handleItemClick(id,imgpath) {
       top: "30vh",
       width: "100%",
       textAlign: "center"
-    }, "-=.35").set(itemExcerpt, { display: "none" }).to(unSelectedItems, 0.2, { opacity: 0 }, "-=.35").add("itemExpand").to(timeline, 0.5, { maxWidth: "100%" }, "itemExpand").to(item, 0.8, { y: itemOffsetTop, width: "100%", height: "60vh" }, "itemExpand").to(itemHeadline, 1, { top: 0, height: "100vh", padding: 0 }, "-=.3").to(itemPhoto, 1, { borderRadius: 0, height: "100vh" }, "itemExpand").add("resize").to(itemHeadline, 1, {
+    }, "-=.35").set(itemExcerpt, { display: "none" }).to(unSelectedItems, 0.2, { opacity: 0 }, "-=.35").add("itemExpand").to(timeline, 0.5, { maxWidth: "100%"}, "itemExpand").to(item, 0.8, { y: itemOffsetTop, width: "100%", height: "60vh" }, "itemExpand").to(itemHeadline, 1, { top: 0, height: "100vh", padding: 0 }, "-=.3").to(itemPhoto, 1, { borderRadius: 0, height: "100vh" }, "itemExpand").add("resize").to(itemHeadline, 1, {
       height: 100,
       opacity: 1,
       fontSize: "calc(.4vw + 10px)",
       backgroundColor: "rgba(45, 45, 45, 0.8)"
     }, "resize").to(itemPhoto, 1, { height: 100 }, "resize").set(itemPhoto, { height: 100, position: "fixed", top: 0 }).set(itemHeadline, { position: "fixed", top: 0 }).set(item, {
       y: 0,
-      height: "auto",
+      height: "100%",
       marginTop: 0,
       clearProps: "transform"
     }).set(unSelectedItems, { display: "none" }).set(timeline, { paddingBottom: 0 }).set(itemContent, { display: "block", top: 100 }).set(window, { scrollTo: { y: 0 } }).fromTo(itemContent, 0.4, { opacity: 0, y: 70 }, { opacity: 1, y: 0 }).staggerFromTo(itemChildContents, 0.7, { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, 0.1, "-=.3");

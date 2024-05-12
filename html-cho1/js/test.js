@@ -64,7 +64,7 @@ for (index = 0; index < 5; index++) {
                 imagesHTML += `<img class="stacked-photo" style="left: ${imgIndex * 26}px; z-index: ${10 - imgIndex};" src="${str}"/>`;
             }
 
-            imagelist+=`<li style=" list-style: none;width:100%;height:100%"><img src="${str}" style="width:100%;height:100%"> </li>`
+            imagelist+=`<li class="imglist" ><img style="width: 100%;" src="${str}" > </li>`
             
         }
     
@@ -80,11 +80,11 @@ for (index = 0; index < 5; index++) {
             <p class="timeline-excerpt">Description of event ${index + 1}</p>
         </div>
         <div class="timeline-content">
-        <button class="timeline-prev">&#10094;</button>
-        <button class="timeline-next">&#10095;</button> 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dicta officiis culpa dolor fugiat facilis dolorum atque, eum explicabo at iste iure, repellendus distinctio aliquam praesentium consequuntur. In, quaerat doloribus!</p>
             <p>Content of event ${index + 1}</p>
-            <ul class = "detail_picture_ul">
+            <img/ style="width:100%;">
+            <p style = "text-align: center;">其他图片</p>
+            <ul id = "detail_picture_ul">
                 ${imagelist}
             </ul>
 
@@ -124,10 +124,11 @@ for(let i = 0;i<storedImageUrls.length;i++){
     txt = storedImageMsgs[i];
 
     imagesHTML += `<img class="stacked-photo" style="left: ${i * 26}px; z-index: ${10 - i};" src="${str}"/>`;
-    imagelist += `<li style="list-style: none; width:100%;height:100%">
+    imagelist += `<li class="imglist">
     
+    
+    <img src="${str}" style="width:100%;"> 
     <p>${txt}</p>
-    <img src="${str}" style="width:100%;height:100%"> 
     </li>`;
 }
 
@@ -143,13 +144,11 @@ timelineItem.innerHTML = `
             <p class="timeline-excerpt">Description of event ${100}</p>
         </div>
         <div class="timeline-content">
-        <button class="timeline-prev">&#10094;</button>
-        <button class="timeline-next">&#10095;</button> 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dicta officiis culpa dolor fugiat facilis dolorum atque, eum explicabo at iste iure, repellendus distinctio aliquam praesentium consequuntur. In, quaerat doloribus!</p>
             <p>Content of event ${100}</p>
-            <img/ style="width:100%;height:100%">
+            <img/ style="width:100%;">
 
-        <ul class = "detail_picture_ul">
+        <ul id = "detail_picture_ul">
             ${imagelist}
         </ul>
 

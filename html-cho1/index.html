@@ -80,7 +80,7 @@
     </style>
 </head>
 
-<body id="mybody" class="fade-in">
+<body id="mybody" class="fade-out">
     <div class="box">
         <ul class="list">
             <li><img src="img/1.1.jpg" alt="" /></li>
@@ -139,7 +139,12 @@
     <script src="js/test.js"></script>
     <script src="js/opera.js"></script>
     <script src="js/bottom_button_click.js"></script>
-
+    <script>
+        const body = document.querySelector('body');
+        if (body.classList.contains('fade-out')){
+            body.classList.replace('fade-out', 'fade-in');
+        }
+      </script>
     <button class="bottom_button" onclick="bottom_button_click()">上传</button>
 </body>
 
