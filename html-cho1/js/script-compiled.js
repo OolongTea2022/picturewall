@@ -1,9 +1,9 @@
 
 let selectedItem,
-    itemTL,
-    overlayTL,
-    scrollTL,
-    isExpanded = false;
+  itemTL,
+  overlayTL,
+  scrollTL,
+  isExpanded = false;
 let originalPhotoSrc;
 
 
@@ -30,16 +30,16 @@ for (item of items) {
     // 遍历事件路径
     for (let i = 0; i < path.length; i++) {
       // 检查当前元素是否是 img 元素
-      const str=path[i].src;
+      const str = path[i].src;
       if (path[i].tagName === 'IMG') {
         // 打印被点击的图片的 src 属性
         console.log(path[i].src);
-        imgpath=path[i].src;
+        imgpath = path[i].src;
         break;
       }
     }
   });
-  
+
   item.addEventListener("click", e => {
     handleItemClick(randomId);
   });
@@ -65,13 +65,13 @@ for (item of items) {
   // });
   item.addEventListener("mouseover", e => {
     if (!isExpanded && e.target.tagName === "IMG") {
-      TweenMax.to(e.target, 3, { scale: 1.2});
+      TweenMax.to(e.target, 3, { scale: 1.2 });
       TweenMax.to(e.target.parentNode, 2.5, {
         boxShadow: "0 30px 70px rgba(0,0,0,.45)"
       });
     }
   });
-  
+
   item.addEventListener("mouseout", e => {
     if (!isExpanded && e.target.tagName === "IMG") {
       TweenMax.to(e.target, 3, { scale: 1 });
@@ -94,13 +94,13 @@ for (item of items) {
           TweenMax.to(img, 0.08, { opacity: 0.08 });
         }
       }
-      TweenMax.to(e.target, 3, { scale: 1.2});
+      TweenMax.to(e.target, 3, { scale: 1.2 });
       TweenMax.to(e.target.parentNode, 2.5, {
         boxShadow: "0 30px 70px rgba(0,0,0,.45)"
       });
     }
   });
-  
+
   item.addEventListener("mouseout", e => {
     if (!isExpanded && e.target.tagName === "IMG") {
       // 获取当前div中的所有图片
@@ -116,11 +116,11 @@ for (item of items) {
       });
     }
   });
-  
+
 }
 
 
-function handleItemClick(id,imgpath) {
+function handleItemClick(id, imgpath) {
   if (overlayTL !== undefined) {
     overlayTL.progress(0);
     overlayTL.pause();
@@ -135,12 +135,12 @@ function handleItemClick(id,imgpath) {
     const itemCTA = item.querySelector(".timeline-cta");
     const itemExcerpt = item.querySelector(".timeline-excerpt");
     const itemChildContents = document.querySelectorAll(`[data-timeline=${id}] .timeline-content > *`);
-    const itemPhotoImg =itemPhoto.querySelector("img"); //document.querySelector('img[src="' + imgpath + '"]');
+    const itemPhotoImg = itemPhoto.querySelector("img"); //document.querySelector('img[src="' + imgpath + '"]');
     const unSelectedItems = document.querySelectorAll(`[data-timeline]:not([data-timeline=${id}])`);
     const unSelectedChildItems = document.querySelectorAll(`[data-timeline]:not([data-timeline=${id}]) > *:not(.timeline-photo)`);
     const itemOffsetTop = item.getBoundingClientRect().y * -1;
     const prevButtons = item.querySelector(".timeline-prev");
-    const  nextButtons = item.querySelector(".timeline-next");
+    const nextButtons = item.querySelector(".timeline-next");
     selectedItem = item;
 
     const img = itemContent.querySelector('img');
@@ -169,7 +169,7 @@ function handleItemClick(id,imgpath) {
       top: "30vh",
       width: "100%",
       textAlign: "center"
-    }, "-=.35").set(itemExcerpt, { display: "none" }).to(unSelectedItems, 0.2, { opacity: 0 }, "-=.35").add("itemExpand").to(timeline, 0.5, { maxWidth: "100%"}, "itemExpand").to(item, 0.8, { y: itemOffsetTop, width: "100%", height: "60vh" }, "itemExpand").to(itemHeadline, 1, { top: 0, height: "100vh", padding: 0 }, "-=.3").to(itemPhoto, 1, { borderRadius: 0, height: "100vh" }, "itemExpand").add("resize").to(itemHeadline, 1, {
+    }, "-=.35").set(itemExcerpt, { display: "none" }).to(unSelectedItems, 0.2, { opacity: 0 }, "-=.35").add("itemExpand").to(timeline, 0.5, { maxWidth: "100%" }, "itemExpand").to(item, 0.8, { y: itemOffsetTop, width: "100%", height: "60vh" }, "itemExpand").to(itemHeadline, 1, { top: 0, height: "100vh", padding: 0 }, "-=.3").to(itemPhoto, 1, { borderRadius: 0, height: "100vh" }, "itemExpand").add("resize").to(itemHeadline, 1, {
       height: 100,
       opacity: 1,
       fontSize: "calc(.4vw + 10px)",
@@ -180,17 +180,19 @@ function handleItemClick(id,imgpath) {
       marginTop: 0,
       clearProps: "transform"
     }).set(unSelectedItems, { display: "none" }).set(timeline, { paddingBottom: 0 }).set(itemContent, { display: "block", top: 100 }).set(window, { scrollTo: { y: 0 } }).fromTo(itemContent, 0.4, { opacity: 0, y: 70 }, { opacity: 1, y: 0 }).staggerFromTo(itemChildContents, 0.7, { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, 0.1, "-=.3");
-    // 左右按钮
-     nextButtons.addEventListener('click', () => {
-      console.log(111111)
-      const newImageSrc = 'img/2.8.jpg'; // 新图片的路径
-      itemPhotoImg.src = newImageSrc; // 更改图片的src属性
-    });
-    prevButtons.addEventListener('click', () => {
-      console.log(111111)
-      const newImageSrc = 'img/2.8.jpg'; // 新图片的路径
-      itemPhotoImg.src = newImageSrc; // 更改图片的src属性
-    }); 
+
+    itemTL.set(window,{scrollTo:{y:200}});
+    // // 左右按钮
+    //  nextButtons.addEventListener('click', () => {
+    //   console.log(111111)
+    //   const newImageSrc = 'img/2.8.jpg'; // 新图片的路径
+    //   itemPhotoImg.src = newImageSrc; // 更改图片的src属性
+    // });
+    // prevButtons.addEventListener('click', () => {
+    //   console.log(111111)
+    //   const newImageSrc = 'img/2.8.jpg'; // 新图片的路径
+    //   itemPhotoImg.src = newImageSrc; // 更改图片的src属性
+    // }); 
   }
 }
 
@@ -217,7 +219,7 @@ backButton.addEventListener("click", () => {
       const itemPhoto = selectedItem.querySelector('.timeline-photo img');
       itemPhoto.src = originalPhotoSrc;
     }
-     
+
     overlayTL.to(selectedItem, 0.3, { opacity: 0 }).to(overlay, 0.6, { height: "110vh", ease: Expo.easeOut }, "+=.2").to(overlay, 0.6, { height: 0, top: "100%", ease: Expo.easeOut });
   }
 });

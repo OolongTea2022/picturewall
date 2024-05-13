@@ -232,16 +232,27 @@ function finished() {
     let imgs = document.querySelectorAll('.list_img');
     let text_inputs = document.querySelectorAll('#text-input input');
 
+    //制作图片链接组
     let imgs_URL = [];
     imgs.forEach(function(img) {
         imgs_URL.push(img.src);
     });
 
+    //制作图片资源组
     let img_msgs = [];
     text_inputs.forEach(function(input) {
         img_msgs.push(input.value);
     })
 
+    //制作当前日期组
+    let img_date = [];
+    let current_date = new Date();
+    img_date.push(current_date.toLocaleDateString());
+    // console.log(img_date);
+
+
+    //整体上传localStorage
+    localStorage.setItem('img_date',JSON.stringify(img_date));
     localStorage.setItem('imgs_URL', JSON.stringify(imgs_URL));
     localStorage.setItem('imgs_msgs', JSON.stringify(img_msgs));
 }

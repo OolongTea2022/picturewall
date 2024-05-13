@@ -1,40 +1,40 @@
    body {
-    margin: 0;
-    transition: all 1.5s ease;
+       margin: 0;
+       transition: all 1.5s ease;
 
-    /* animation: window_animation 3s ease;
+       /* animation: window_animation 3s ease;
     animation-fill-mode: forwards; */
    }
 
    .fade-out {
-    opacity: 0;
+       opacity: 0;
    }
 
    .fade-in {
-    opacity: 1;
+       opacity: 1;
    }
 
 
    #add_window {
-        /* width: 1360px;
+       /* width: 1360px;
         height: 690px; */
-        height: 100vh;
-        position: relative;
-        top: 0;
-        left: 0;
-        /* background-color: transparent; */
-        background-image: url("../imagesfile/tiles-shapes-2617112_1280.jpg");
-        background-size: cover;
-        overflow-x: hidden;
-        overflow-y: auto;
+       height: 100vh;
+       position: relative;
+       top: 0;
+       left: 0;
+       /* background-color: transparent; */
+       background-image: url("../imagesfile/tiles-shapes-2617112_1280.jpg");
+       background-size: cover;
+       overflow-x: hidden;
+       overflow-y: auto;
    }
-   
+
    /* 圆形按钮样式 */
    .btn.add {
        /* position: relative; */
        width: 100px;
        height: 100px;
-       background-color: #31c812;
+       background-color: #ffffff;
        border-radius: 50%;
        display: flex;
        flex-direction: column;
@@ -49,11 +49,12 @@
        overflow: hidden;
        transition: all 1s ease;
    }
-      /* 圆形按钮移动到长方形左上角的样式 */
-      .btn.add.move {
-        top: calc(50% - 200px - 50px);
-        left: calc(50% - 300px - 50px);
-    }
+
+   /* 圆形按钮移动到长方形左上角的样式 */
+   .btn.add.move {
+       top: calc(50% - 200px - 50px);
+       left: calc(50% - 300px - 50px);
+   }
 
    #add_part {
        flex: 1;
@@ -69,8 +70,7 @@
        height: 0;
        background-color: rgba(249, 192, 2, 0.952);
        transition: all 0.5s ease;
-       animation: wave 0.5s;
-       animation-play-state: pause;
+
    }
 
    #add_part span {
@@ -221,78 +221,198 @@
    }
 
    #finish_btn {
-    height: 50px;
-    width: 0;
-    color: white;
-    background-color: #31c812;
-    text-align: right;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    overflow: hidden;
-    visibility: hidden;
+       height: 50px;
+       width: 0;
+       color: white;
+       background-color: #31c812;
+       text-align: right;
+       cursor: pointer;
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translateY(-50%);
+       z-index: 1;
+       overflow: hidden;
+       visibility: hidden;
    }
 
    #finish_btn.show {
-    width: 100px;
-    visibility: visible;
+       width: 100px;
+       visibility: visible;
    }
 
    #finish_btn.finishBtnShow_animation {
-    animation: finishBtnShow_animation 0.5s ease;
-    animation-delay: 0.5s;
-    animation-fill-mode: forwards;
+       animation: finishBtnShow_animation 0.5s ease;
+       animation-delay: 0.5s;
+       animation-fill-mode: forwards;
    }
 
    #finish_btn.finishBtnHidden_animation {
-    animation: finishBtnHidden_animation 1s ease;
-    animation-fill-mode: forwards;
+       animation: finishBtnHidden_animation 1s ease;
+       animation-fill-mode: forwards;
    }
 
    #finish_btn.finishBtnClick_animation {
-    animation: finishBtnClick_animation 1s ease;
+       animation: finishBtnClick_animation 1s ease;
 
-    animation-fill-mode: forwards;
+       animation-fill-mode: forwards;
    }
+
    #finish_btn.finishBtnClick_animation_ll {
-    animation: finishBtnClick_animation_ll 1s ease;
+       animation: finishBtnClick_animation_ll 1s ease;
 
-    animation-fill-mode: forwards;
+       animation-fill-mode: forwards;
    }
 
 
-   @keyframes finishBtnShow_animation
-{
-    0% {width: 0; visibility: hidden;}
-    100% {width: 350px; visibility: visible;}
-}
-@keyframes finishBtnHidden_animation
-{
-    0% {width: 350px; visibility: visible;}
-    100% {width: 0; visibility: hidden;}
-}
+   @keyframes finishBtnShow_animation {
+       0% {
+           width: 0;
+           visibility: hidden;
+       }
 
-@keyframes finishBtnClick_animation {
-    0% {width: 350px; visibility: visible;}
-    50% {width: 330px; visibility: visible;}
-    100% {width: 350px; visibility: visible;}
-}
+       100% {
+           width: 350px;
+           visibility: visible;
+       }
+   }
 
-@keyframes finishBtnClick_animation_ll {
-    0% {width: 350px; visibility: visible;}
-    50% {width: 330px; visibility: visible;}
-    100% {width: 350px; visibility: visible;}
-}
+   @keyframes finishBtnHidden_animation {
+       0% {
+           width: 350px;
+           visibility: visible;
+       }
 
-@keyframes window_animation {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
+       100% {
+           width: 0;
+           visibility: hidden;
+       }
+   }
 
-.top_button{
+   @keyframes finishBtnClick_animation {
+       0% {
+           width: 350px;
+           visibility: visible;
+       }
+
+       50% {
+           width: 330px;
+           visibility: visible;
+       }
+
+       100% {
+           width: 350px;
+           visibility: visible;
+       }
+   }
+
+   @keyframes finishBtnClick_animation_ll {
+       0% {
+           width: 350px;
+           visibility: visible;
+       }
+
+       50% {
+           width: 330px;
+           visibility: visible;
+       }
+
+       100% {
+           width: 350px;
+           visibility: visible;
+       }
+   }
+
+   @keyframes window_animation {
+       0% {
+           opacity: 0;
+       }
+
+       100% {
+           opacity: 1;
+       }
+   }
+
+   /*中间按钮样式*/
+   @keyframes flash {
+       0% {
+           opacity: 1;
+       }
+
+       50% {
+           opacity: 0.8;
+       }
+
+       100% {
+           opacity: 1;
+       }
+   }
+
+   /* 应用闪动动画到.hover-flash:hover状态的元素 */
+   .flash:hover {
+       animation: flash 0.5s ease;
+   }
+
+   /*top按钮样式*/
+   @keyframes sheen {
+       0% {
+           transform: skewY(-45deg) translateX(0);
+       }
+
+       100% {
+           transform: skewY(-45deg) translateX(12.5em);
+       }
+   }
+
+   .top_button {
+       top: 15px;
+       left: 50%;
+       transform: translateX(-50%);
+       z-index: 100;
+       position: absolute;
+
+       width: 100px;
+       height: 50px;
+
+       border-radius: 10px;
+       padding: 10px;
+       font-size: 20px;
+       cursor: pointer;
+       overflow-x: hidden;
+       overflow: hidden;
+
+       background-image: linear-gradient(45deg, #4cc19a 0%, #79b6fc 100%);
+       /* 应用渐变背景 */
+       border: 2px solid white;
+       color: #79f1fc;
+   }
+
+   .top_button:before {
+       content: "";
+       background-color: rgba(255, 255, 255, 0.5);
+       height: 100%;
+       width: 3em;
+       display: block;
+       position: absolute;
+       top: 0;
+       left: -5.5em;
+       transform: skewX(-45deg) translateX(0);
+       transition: none;
+   }
+
+   .top_button:hover {
+       background-color: #6ebbef;
+       color: #fff;
+       border-bottom: 4px solid #6ebbef;
+   }
+
+   .top_button:hover:before {
+       transform: skewX(-45deg) translateX(13.5em);
+       transition: all 0.5s ease-in-out;
+   }
+
+
+   /* .top_button{
     top: 5px;
     left: 50%;
     transform:translateX(-50%);
@@ -310,4 +430,4 @@
     background-color: red;
     color: white;
 
-}
+} */

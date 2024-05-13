@@ -88,7 +88,7 @@ body {
   height: 30vh;
   width: 45%;
   position: relative;
-  margin: 40px 0;
+  margin: 70px 0;
 }
 .timeline-item:nth-child(even) {
   align-self: flex-end;
@@ -180,19 +180,11 @@ body {
 /*# sourceMappingURL=test.css.map */
 /* CSS: 添加堆叠图片的样式 */
 .stacked-photo {
+  border-radius: 3%;
   position: absolute;
   width: calc(100% - 104px); /* 调整宽度以避免重叠 */
   transition: transform 0.5s ease;
 }
-/* /* 图片堆叠向左
-.timeline-item-left .stacked-photo {
-  transform: translateX(-0px);
-}
-
-/* 图片堆叠向右  
-.timeline-item-right .stacked-photo {
-  transform: translateX(0px);
-}  */
 
 .timeline-photo .stacked-photo {
   transform: translateX(0px);
@@ -209,3 +201,5 @@ body {
 .timeline-item:hover .stacked-photo {
   opacity: 0.1; /* 设置其他图片的透明度 
 } */
+
+

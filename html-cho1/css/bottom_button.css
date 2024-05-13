@@ -1,4 +1,4 @@
-.bottom_button{
+/* .bottom_button{
     bottom: 5px;
     left: 50%;
     transform:translateX(-50%);
@@ -16,6 +16,56 @@
     background-color: red;
     color: white;
 
+} */
+@keyframes sheen {
+  0% {
+    transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+.bottom_button{
+  bottom: 5px;
+  left: 50%;
+  transform:translateX(-50%);
+  z-index: 100;
+  position: absolute;
+
+  width: 100px;
+  height:50px;
+
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  overflow-x: hidden;
+  overflow: hidden;
+
+  background-image: linear-gradient(45deg, #4cc19a 0%, #79b6fc 100%); /* 应用渐变背景 */
+  border: 2px solid white;
+  color:  #79f1fc;
+}
+.bottom_button:before {
+  content: "";
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100%;
+  width: 3em;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -5.5em;
+  transform: skewX(-45deg) translateX(0);
+  transition: none;
+}
+.bottom_button:hover {
+  background-color: #6ebbef;
+  color: #fff;
+  border-bottom: 4px solid #6ebbef;
+}
+.bottom_button:hover:before {
+  transform: skewX(-45deg) translateX(13.5em);
+  transition: all 0.5s ease-in-out;
 }
 
 .fade-in {
